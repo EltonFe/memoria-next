@@ -92,7 +92,8 @@ export default function Home({ cartasViradas }) {
         <title>Create Next App</title>
         <meta name="description" content="Jogo da memória" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/memoria.png" />
+        <title>MemóriaNext</title>
       </Head>
 
       
