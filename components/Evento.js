@@ -1,10 +1,11 @@
 import styles from '../styles/Card.module.css'
 export let contador = 0;
+export let contadorJogadas = 0;
 export let primeiroObjeto = null;
 export let imagem = '';
 export let clickAtivo = true;
 
-export default function MinhaDiv({ idImg }) {
+export default function MinhaDiv({ idImg ,handleJogadas}) {
     
     
     
@@ -41,11 +42,14 @@ export default function MinhaDiv({ idImg }) {
             
                 contador = 0;
                 if (idImg.url == imagem) {
-              
+                    contadorJogadas++;
+                    handleJogadas(contadorJogadas);
                     
                     clickAtivo = true;
                 
                 } else {
+                    contadorJogadas++;
+                    handleJogadas(contadorJogadas);
                     setTimeout(() => {
                         primeiroObjeto.style.background = "url('/img/img/imagem-1.jpg')";
                         primeiroObjeto.style.backgroundSize = "cover";

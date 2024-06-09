@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Card from '../components/Card'
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+
+import {useState} from 'react'
 import Link from 'next/link'
 
 export let data = [];
@@ -84,7 +86,11 @@ export function randomIntFromInterval(min, max) { // min and max included
 export default function Home({ cartasViradas }) {
 
  
+  const [jogadas, setJogadas] = useState(0);
   
+  const handleJogadas = (r) => {
+    setJogadas(r);
+  }
   
   return (
     <>
@@ -101,8 +107,8 @@ export default function Home({ cartasViradas }) {
 
       <main className={styles.mainContainer}>
         <h1>Jogo da Memória Memória<span>Next</span> </h1>
-        
-        <Card todo={cartasViradas} />
+         <p>Número de Jogadas: <span className={styles.jogadas}>{jogadas}</span></p>
+        <Card todo={cartasViradas} handleJogadas={handleJogadas} />
         
         
 

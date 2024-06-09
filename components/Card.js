@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 
-export default function Card({ todo }) {
+export default function Card({ todo,handleJogadas }) {
     const [idImg, setidImg] = useState();
     
     function Reload() {
@@ -22,7 +22,7 @@ export default function Card({ todo }) {
             <div><button className={styles.btn} onClick={Reload}>Recomeçar</button></div>
             <div className={styles.containerImg}>
           
-            {todo.map((card)=>(<Evento key={card.id} idImg={card}/>)) }
+            {todo.map((card)=>(<Evento handleJogadas={handleJogadas} key={card.id} idImg={card}/>)) }
            
           
                 
