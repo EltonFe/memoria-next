@@ -21,3 +21,11 @@
     
     
   }
+  .btn{
+    padding: .6rem 2rem;
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 4%;
+    
+  }

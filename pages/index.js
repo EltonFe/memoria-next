@@ -100,7 +100,7 @@ export default function Home({ cartasViradas }) {
 
       <main className={styles.mainContainer}>
         <h1>Jogo da Memória Memória<span>Next</span> </h1>
-        <div><Link href="/">Recomeçar</Link></div>
+        
         <Card todo={cartasViradas} />
         
         

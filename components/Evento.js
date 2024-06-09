@@ -42,7 +42,8 @@ export default function MinhaDiv({ idImg }) {
                 contador = 0;
                 if (idImg.url == imagem) {
               
-                    alert("acertou");
+                    
+                    clickAtivo = true;
                 
                 } else {
                     setTimeout(() => {
