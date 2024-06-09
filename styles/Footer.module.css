@@ -1,0 +1,16 @@
+.footerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    height: 150px;
+}
+
+.footerContainer h3{
+    color: white;
+
+}
+
+.footerContainer h3 span{
+    color: red;
+}

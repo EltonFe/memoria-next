@@ -1,0 +1,9 @@
+.sobreContainer{
+    display: flex;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 70vh;
+}

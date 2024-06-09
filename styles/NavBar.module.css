@@ -1,0 +1,35 @@
+.navBarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: black;
+    margin: 5px;
+    height: 80px;
+
+    
+}
+
+.navBarContainer li{
+    list-style: none;
+    padding: 5px;
+}
+.navBarContainer ul{
+    display: flex;
+    align-items: center;
+}
+
+.navBarContainer a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.4s;
+    
+
+}
+
+.navBarContainer a:hover{
+    font-size: 1.5rem;
+    border-bottom: solid 2px white;
+    padding: .6rem 2rem;
+}
