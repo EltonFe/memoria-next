@@ -1,3 +1,4 @@
+'use client'
 import styles from '../styles/Card.module.css'
 export let contador = 0;
 export let contadorJogadas = 0;
@@ -5,7 +6,10 @@ export let primeiroObjeto = null;
 export let imagem = '';
 export let clickAtivo = true;
 
-export default function MinhaDiv({ idImg ,handleJogadas}) {
+
+export default function MinhaDiv({ idImg ,handleJogadas,item,contadorCartas}) {
+ 
+    
     
     
     
@@ -71,14 +75,20 @@ export default function MinhaDiv({ idImg ,handleJogadas}) {
         }
 
     }
+
+    
     
     return (
         
         <>
-        <div onClick={Vira} id={`${idImg.id}`} key={idImg.id} className={styles.imgBackground}>   
+            <div   className={styles.imgCardContainer}> 
+                <p className={styles.cartas} >Card # <span>{contadorCartas}</span></p>
+                
+                <div id={`${idImg.id}`} onClick={Vira}   className={styles.imgBackground}>   
 
                     
                 
+                </div>
         </div>
         </>
     )
