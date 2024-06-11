@@ -40,9 +40,10 @@
   position: fixed;
   padding: .6rem 2rem;
   margin-left: 10px;
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 4%;
   font-size: 1.5rem;
+  border: 2px solid black;
   
 }

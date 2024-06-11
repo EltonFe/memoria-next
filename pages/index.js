@@ -47,8 +47,8 @@ export default function Home() {
 
       <main className={styles.mainContainer}>
         <h1>Jogo da Memória Memória<span>Next</span> </h1>
-        <p className={styles.tituloJogadas}>Número de Jogadas: <span className={styles.jogadas}>{jogadas}</span></p>
-        <Card handleJogadas={ handleJogadas} />
+        <p className={styles.tituloJogadas}>Jogadas: <span className={styles.jogadas}>{jogadas}</span></p>
+        <Card handleJogadas={handleJogadas} jogadas={jogadas} />
         
         
 

@@ -11,7 +11,7 @@ export let chave = true;
 
 
 export const cartasViradas = [];
-export default function Card({handleJogadas}) {
+export default function Card({handleJogadas,jogadas}) {
     let j = 0;
     
 function randomIntFromInterval(min, max) { // min and max included 
@@ -97,7 +97,7 @@ function randomIntFromInterval(min, max) { // min and max included
             <div className={styles.containerImg}>
           
                 
-                {cartasViradas.map((card, index) => (<Evento contadorCartas={contadorCartas} idImg={card} index={index} item={(j++)+1} handleJogadas={ handleJogadas} />))}
+                {cartasViradas.map((card, index) => (<Evento contadorCartas={contadorCartas} idImg={card} index={index} item={(j++)+1} handleJogadas={ handleJogadas} jogadas={jogadas} />))}
                     
                 
                      

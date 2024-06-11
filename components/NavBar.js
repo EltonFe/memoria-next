@@ -11,7 +11,7 @@ export default function NavBar() {
         <nav className={styles.navBarContainer}>
             <Link  href="/">TillOf Help</Link>
             <ul>
-                <li><Link  href="/">Home</Link></li>
+                <li><Link  href="/" onClick={reload}>Home</Link></li>
                 <li><Link href="/sobre">Sobre</Link></li>
             </ul>
             

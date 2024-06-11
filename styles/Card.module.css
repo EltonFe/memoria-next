@@ -1,6 +1,6 @@
 .imgBackground{
-    width: 250px;
-    height: 320px;
+    width: 150px;
+    height: 180px;
     background: url("/img/img/imagem-1.jpg");
     background-size: cover;
     background-position: center;
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     
   }

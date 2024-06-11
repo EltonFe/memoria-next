@@ -5,10 +5,11 @@ export let contadorJogadas = 0;
 export let primeiroObjeto = null;
 export let imagem = '';
 export let clickAtivo = true;
+export let contadorFinalJogo = 0;
 
 
 
-function Evento({idImg,item,index,handleJogadas}) {
+function Evento({idImg,item,index,handleJogadas,jogadas}) {
  
     
     
@@ -52,7 +53,14 @@ function Evento({idImg,item,index,handleJogadas}) {
                 
                 if (idImg.url == imagem) {
                     contadorJogadas++;
-                    
+                    contadorFinalJogo++;
+                    if (contadorFinalJogo >15) {
+                        setTimeout(() => {
+                            if (confirm(`Game chegou ao final com ${jogadas +1} jogadas. Prabéns. Para começar denovo click Ok`)) {
+                                location.reload();
+                            }
+                        },5000);
+                    }
                     
                     clickAtivo = true;
                     handleJogadas(contadorJogadas)
@@ -67,7 +75,7 @@ function Evento({idImg,item,index,handleJogadas}) {
                         idImgVira.style.backgroundSize = "cover";
                         idImgVira.style.backgroundPosition = "center";
                         clickAtivo = true;
-                    }, 1000)
+                    }, 1500)
                 
                 
 
@@ -75,6 +83,8 @@ function Evento({idImg,item,index,handleJogadas}) {
         
             } else {
                 alert("Click em outro.")
+
+               
             }
 
 
@@ -90,7 +100,7 @@ function Evento({idImg,item,index,handleJogadas}) {
         <>
             <div className={styles.imgCardContainer}>
                 <div>
-                    <p className={styles.cartas} >Carta # <span>{item}</span></p>
+                    <p className={styles.cartas} >Carta <span>{item}</span></p>
                 </div>
                 <div id={index} className={styles.imgBackground} onClick={vira}>
 
