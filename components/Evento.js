@@ -7,21 +7,22 @@ export let imagem = '';
 export let clickAtivo = true;
 
 
-export default function MinhaDiv({ idImg ,handleJogadas,item,contadorCartas}) {
+
+function Evento({idImg,item,index,handleJogadas}) {
  
     
     
     
     
-    function Vira() {
+    function vira() {
         
         
         
         
-        const idImgVira = document.getElementById(idImg.id);
+        const idImgVira = document.getElementById(index);
         
         
-        if (contador === 0) {
+        if (contador == 0) {
             if (clickAtivo) {
                 primeiroObjeto = idImgVira;
                 idImgVira.style.background = `url(${idImg.url})`;
@@ -37,7 +38,10 @@ export default function MinhaDiv({ idImg ,handleJogadas,item,contadorCartas}) {
             
         } else {
             
+            
             if (primeiroObjeto != idImgVira) {
+
+                
                 
                 idImgVira.style.background = `url(${idImg.url})`;
                 idImgVira.style.backgroundSize = "cover";
@@ -45,15 +49,16 @@ export default function MinhaDiv({ idImg ,handleJogadas,item,contadorCartas}) {
 
             
                 contador = 0;
+                
                 if (idImg.url == imagem) {
                     contadorJogadas++;
-                    handleJogadas(contadorJogadas);
+                    
                     
                     clickAtivo = true;
-                
+                    handleJogadas(contadorJogadas)
                 } else {
                     contadorJogadas++;
-                    handleJogadas(contadorJogadas);
+                    handleJogadas(contadorJogadas)
                     setTimeout(() => {
                         primeiroObjeto.style.background = "url('/img/img/imagem-1.jpg')";
                         primeiroObjeto.style.backgroundSize = "cover";
@@ -72,7 +77,9 @@ export default function MinhaDiv({ idImg ,handleJogadas,item,contadorCartas}) {
                 alert("Click em outro.")
             }
 
+
         }
+        
 
     }
 
@@ -81,16 +88,22 @@ export default function MinhaDiv({ idImg ,handleJogadas,item,contadorCartas}) {
     return (
         
         <>
-            <div   className={styles.imgCardContainer}> 
-                <p className={styles.cartas} >Card # <span>{contadorCartas}</span></p>
-                
-                <div id={`${idImg.id}`} onClick={Vira}   className={styles.imgBackground}>   
-
-                    
-                
+            <div className={styles.imgCardContainer}>
+                <div>
+                    <p className={styles.cartas} >Carta # <span>{item}</span></p>
                 </div>
-        </div>
+                <div id={index} className={styles.imgBackground} onClick={vira}>
+
+                </div>
+            </div>
+        
         </>
+            
+                
+            
+        
     )
     
 }
+
+export default Evento;
